@@ -2323,7 +2323,9 @@ __metadata:
     "@testing-library/react": 14.0.0
     "@types/react": 18.2.6
     babel-jest: 29.5.0
+    browserlist: ^1.0.1
     esbuild: 0.17.18
+    esbuild-plugin-browserslist: ^0.7.0
     jest: 29.5.0
     jest-environment-jsdom: 29.5.0
     react: 18.2.0
@@ -2331,6 +2333,12 @@ __metadata:
     typescript: 5.0.4
   peerDependencies:
     "@clerk/clerk-react": 4.15.4
+  languageName: unknown
+  linkType: soft
+
+"@redwoodjs/auth-clerk@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@redwoodjs/auth-clerk@workspace:."
   languageName: unknown
   linkType: soft
 
@@ -2344,12 +2352,6 @@ __metadata:
   checksum: 96dbe1f23f9b6536a27d3919d5162144c7d89b5d463de4304564f9bf99d2ba7d04f2674553551f15bd7d81624e440d155d8bced30400c2d893a860957f1215e4
   languageName: node
   linkType: hard
-
-"@redwoodjs/clerk@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@redwoodjs/clerk@workspace:."
-  languageName: unknown
-  linkType: soft
 
 "@redwoodjs/cli-helpers@npm:5.0.6":
   version: 5.0.6
@@ -3404,6 +3406,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"browserlist@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "browserlist@npm:1.0.1"
+  dependencies:
+    chalk: ^2.4.1
+  bin:
+    browserlist: ./cli.js
+  checksum: db4dc273b59637f4e716676978d2c8a2431fb021860ec8ea9552eebe24bff67e955630d42c3995a9b03c1606819b18fb032ab943103b54b830933ec4d695e516
+  languageName: node
+  linkType: hard
+
 "browserslist@npm:^4.21.3, browserslist@npm:^4.21.5":
   version: 4.21.5
   resolution: "browserslist@npm:4.21.5"
@@ -3562,7 +3575,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^2.0.0":
+"chalk@npm:^2.0.0, chalk@npm:^2.4.1":
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
   dependencies:
@@ -3947,7 +3960,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:4.3.4, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.3":
+"debug@npm:4, debug@npm:4.3.4, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.3, debug@npm:^4.3.4":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
   dependencies:
@@ -4295,6 +4308,19 @@ __metadata:
     isarray: ^2.0.5
     stop-iteration-iterator: ^1.0.0
   checksum: 8fa118da42667a01a7c7529f8a8cca514feeff243feec1ce0bb73baaa3514560bd09d2b3438873cf8a5aaec5d52da248131de153b28e2638a061b6e4df13267d
+  languageName: node
+  linkType: hard
+
+"esbuild-plugin-browserslist@npm:^0.7.0":
+  version: 0.7.0
+  resolution: "esbuild-plugin-browserslist@npm:0.7.0"
+  dependencies:
+    debug: ^4.3.4
+    zod: ^3.20.2
+  peerDependencies:
+    browserslist: ^4.21.5
+    esbuild: ~0.17.5
+  checksum: a84002ab70201a3e86d733e44e64f5e5932ba1a2df41719dd6af50f76bfb6dee3b9d3e1a3369818fad6b28e22eec025fa67fe8c8f36ddf3f008a95b04ab28dbb
   languageName: node
   linkType: hard
 
@@ -9102,5 +9128,12 @@ __metadata:
     compress-commons: ^4.1.0
     readable-stream: ^3.6.0
   checksum: 4a73da856738b0634700b52f4ab3fe0bf0a532bea6820ad962d0bda0163d2d5525df4859f89a7238e204a378384e12551985049790c1894c3ac191866e85887f
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.20.2":
+  version: 3.21.4
+  resolution: "zod@npm:3.21.4"
+  checksum: f185ba87342ff16f7a06686767c2b2a7af41110c7edf7c1974095d8db7a73792696bcb4a00853de0d2edeb34a5b2ea6a55871bc864227dace682a0a28de33e1f
   languageName: node
   linkType: hard
