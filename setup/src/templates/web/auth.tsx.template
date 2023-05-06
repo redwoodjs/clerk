@@ -1,23 +1,11 @@
 import React, { useEffect } from 'react'
 
-import { ClerkLoaded, ClerkProvider, useUser } from '@clerk/clerk-react'
+import { ClerkProvider, useUser } from '@clerk/clerk-react'
 
 import { createAuth } from '@redwoodjs/auth-clerk-web'
-
-// You can set user roles in a "roles" array on the public metadata in Clerk.
-//
-// Also, you need to add three env variables: CLERK_FRONTEND_API_URL for web and
-// CLERK_API_KEY plus CLERK_JWT_KEY for api. All three can be found under "API Keys"
-// on your Clerk.dev dashboard.
-//
-// Lastly, be sure to add the key "CLERK_FRONTEND_API_URL" in your app's redwood.toml
-// [web] config "includeEnvironmentVariables" setting.
+import { navigate } from '@redwoodjs/router'
 
 export const { AuthProvider: ClerkRwAuthProvider, useAuth } = createAuth()
-
-interface Props {
-  children: React.ReactNode
-}
 
 const ClerkStatusUpdater = () => {
   const { isSignedIn, user, isLoaded } = useUser()
@@ -32,18 +20,45 @@ const ClerkStatusUpdater = () => {
   return null
 }
 
-export const AuthProvider = ({ children }: Props) => {
-  const frontendApi = process.env.CLERK_FRONTEND_API_URL
-  if (!frontendApi) {
-    throw new Error('Need to define env variable CLERK_FRONTEND_API_URL')
-  }
+type ClerkOptions =
+  | { publishableKey: string; frontendApi?: never }
+  | { publishableKey?: never; frontendApi: string }
+
+interface Props {
+  children: React.ReactNode
+}
+
+const ClerkProviderWrapper = ({
+  children,
+  clerkOptions,
+}: Props & { clerkOptions: ClerkOptions }) => {
+  const { reauthenticate } = useAuth()
 
   return (
-    <ClerkProvider frontendApi={frontendApi} navigate={(to) => navigate(to)}>
-      <ClerkRwAuthProvider>
-        <ClerkLoaded>{children}</ClerkLoaded>
-        <ClerkStatusUpdater />
-      </ClerkRwAuthProvider>
+    <ClerkProvider
+      {...clerkOptions}
+      navigate={(to) => reauthenticate().then(() => navigate(to))}
+    >
+      {children}
+      <ClerkStatusUpdater />
     </ClerkProvider>
+  )
+}
+
+export const AuthProvider = ({ children }: Props) => {
+  const publishableKey = process.env.CLERK_PUBLISHABLE_KEY
+  const frontendApi =
+    process.env.CLERK_FRONTEND_API_URL || process.env.CLERK_FRONTEND_API
+
+  const clerkOptions: ClerkOptions = publishableKey
+    ? { publishableKey }
+    : { frontendApi }
+
+  return (
+    <ClerkRwAuthProvider>
+      <ClerkProviderWrapper clerkOptions={clerkOptions}>
+        {children}
+      </ClerkProviderWrapper>
+    </ClerkRwAuthProvider>
   )
 }
