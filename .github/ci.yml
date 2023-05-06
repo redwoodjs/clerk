@@ -10,13 +10,13 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-lint-test:
+  build-test:
     needs: check
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
       fail-fast: true
-    name: 🏗 Build, lint, test / ${{ matrix.os }} / node 18 latest
+    name: 🏗 Build, test / ${{ matrix.os }} / node 18 latest
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
@@ -29,9 +29,9 @@ jobs:
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
-        shell: bash
 
       - uses: actions/cache@v3
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock', '.yarnrc.yml') }}
@@ -39,11 +39,9 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - run: yarn install
-        shell: bash
 
       - name: 🔨 Build
         run: yarn build
 
       - name: 🧪 Test
         run: yarn test
-
