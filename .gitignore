@@ -9,5 +9,5 @@ node_modules
 !.yarn/sdks
 !.yarn/versions
 
-# Jest coverage.
-packages/*/coverage
+# Ignore the coverage reports Jest generates.
+coverage
