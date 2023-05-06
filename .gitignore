@@ -1,0 +1,13 @@
+dist
+node_modules
+
+# Yarn config. See https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored.
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Jest coverage.
+packages/*/coverage

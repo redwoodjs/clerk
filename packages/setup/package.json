@@ -1,0 +1,27 @@
+{
+  "name": "@redwoodjs/auth-clerk-setup",
+  "version": "5.0.6",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redwoodjs/auth-clerk.git",
+    "directory": "packages/setup"
+  },
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "run build:js && run build:types",
+    "build:js": "node ./build.mjs",
+    "build:types": "tsc --build --verbose"
+  },
+  "dependencies": {
+    "@redwoodjs/cli-helpers": "5.0.6"
+  },
+  "devDependencies": {
+    "@types/yargs": "17.0.24",
+    "typescript": "5.0.4"
+  }
+}
