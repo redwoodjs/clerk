@@ -20,6 +20,9 @@ module.exports = {
 
   rules: {
     'prettier/prettier': 'warn',
+
+    '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
 
   overrides: [
