@@ -2292,6 +2292,7 @@ __metadata:
     "@clerk/clerk-sdk-node": 4.8.7
     "@redwoodjs/api": 5.0.6
     "@types/aws-lambda": 8.10.115
+    "@types/node": 20.1.0
     babel-jest: 29.5.0
     esbuild: 0.17.18
     jest: 29.5.0
@@ -2323,9 +2324,9 @@ __metadata:
     "@testing-library/react": 14.0.0
     "@types/react": 18.2.6
     babel-jest: 29.5.0
-    browserlist: ^1.0.1
+    browserslist: 4.21.5
     esbuild: 0.17.18
-    esbuild-plugin-browserslist: ^0.7.0
+    esbuild-plugin-browserslist: 0.7.0
     jest: 29.5.0
     jest-environment-jsdom: 29.5.0
     react: 18.2.0
@@ -2770,7 +2771,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:20.1.0":
   version: 20.1.0
   resolution: "@types/node@npm:20.1.0"
   checksum: c6d9afa9aa78b4b4348c69ece94975be70346b144c278f1395694a10ef919d7db300018101b6f9245e6bdd76674a5327d2d14829092f3d5295e858cff5f22a66
@@ -3406,18 +3407,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserlist@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "browserlist@npm:1.0.1"
-  dependencies:
-    chalk: ^2.4.1
-  bin:
-    browserlist: ./cli.js
-  checksum: db4dc273b59637f4e716676978d2c8a2431fb021860ec8ea9552eebe24bff67e955630d42c3995a9b03c1606819b18fb032ab943103b54b830933ec4d695e516
-  languageName: node
-  linkType: hard
-
-"browserslist@npm:^4.21.3, browserslist@npm:^4.21.5":
+"browserslist@npm:4.21.5, browserslist@npm:^4.21.3, browserslist@npm:^4.21.5":
   version: 4.21.5
   resolution: "browserslist@npm:4.21.5"
   dependencies:
@@ -3575,7 +3565,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^2.0.0, chalk@npm:^2.4.1":
+"chalk@npm:^2.0.0":
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
   dependencies:
@@ -4311,7 +4301,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild-plugin-browserslist@npm:^0.7.0":
+"esbuild-plugin-browserslist@npm:0.7.0":
   version: 0.7.0
   resolution: "esbuild-plugin-browserslist@npm:0.7.0"
   dependencies:
