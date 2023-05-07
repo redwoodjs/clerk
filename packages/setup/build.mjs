@@ -1,11 +1,7 @@
 import * as esbuild from 'esbuild'
 
 await esbuild.build({
-  entryPoints: [
-    'src/index.ts',
-    'src/setup.ts',
-    'src/setupHandler.ts',
-  ],
+  entryPoints: ['src/index.ts', 'src/setup.ts', 'src/setupHandler.ts'],
   outdir: 'dist',
 
   format: 'cjs',
