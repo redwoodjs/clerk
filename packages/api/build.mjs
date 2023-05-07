@@ -1,10 +1,7 @@
 import * as esbuild from 'esbuild'
 
 await esbuild.build({
-  entryPoints: [
-    'src/index.ts',
-    'src/decoder.ts',
-  ],
+  entryPoints: ['src/index.ts', 'src/decoder.ts'],
   outdir: 'dist',
 
   format: 'cjs',
