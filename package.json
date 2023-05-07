@@ -1,0 +1,12 @@
+{
+  "name": "@redwoodjs/auth-clerk",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "yarn workspaces foreach --parallel run build",
+    "test": "yarn workspaces foreach --parallel run test"
+  },
+  "packageManager": "yarn@3.5.1"
+}
