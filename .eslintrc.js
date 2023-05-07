@@ -18,6 +18,8 @@ module.exports = {
     node: true,
   },
 
+  ignorePatterns: ['dist'],
+
   rules: {
     'prettier/prettier': 'warn',
 
