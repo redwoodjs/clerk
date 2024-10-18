@@ -1384,17 +1384,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@clerk/clerk-react@npm:4.15.4":
-  version: 4.15.4
-  resolution: "@clerk/clerk-react@npm:4.15.4"
+"@clerk/clerk-react@npm:4.32.4":
+  version: 4.32.4
+  resolution: "@clerk/clerk-react@npm:4.32.4"
   dependencies:
-    "@clerk/shared": ^0.15.7
-    "@clerk/types": ^3.36.0
-    swr: 1.3.0
+    "@clerk/shared": 1.4.2
+    "@clerk/types": 3.65.4
     tslib: 2.4.1
   peerDependencies:
     react: ">=16"
-  checksum: e843aa1f613fd65cd3d5e5cb2311dc5c5355e158bf67255761b16a61fdc4507568a8cbeb98190a604442a6f903063d3415eee6967b8950737a30c10ad926e0f4
+  checksum: 7ab73a04b4921cdda4ae3759cc8dc87c26f1524152e07c588b2bae6d5157956c3d6e78407857644c638ee9a869a7f967fff54808c9c9d9fbfa9eee24959e2be0
   languageName: node
   linkType: hard
 
@@ -1415,12 +1414,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@clerk/shared@npm:^0.15.7":
-  version: 0.15.7
-  resolution: "@clerk/shared@npm:0.15.7"
+"@clerk/shared@npm:1.4.2":
+  version: 1.4.2
+  resolution: "@clerk/shared@npm:1.4.2"
+  dependencies:
+    glob-to-regexp: 0.4.1
+    js-cookie: 3.0.1
+    swr: 2.2.0
   peerDependencies:
     react: ">=16"
-  checksum: 9159e3c1696d1df29e63cbb4c7a91c54cbbe73b5121f2037c77b72e94892599a93bd9dbe5851fed2bca5fc4b6f1c3cc7da1f6d17852a7a088aa70e9204e42555
+  peerDependenciesMeta:
+    react:
+      optional: true
+  checksum: 8bbff8e34e28e311367b5f774832eca6d9339473be2e168b9cbdd83d57ba378e00efcc01c540e29c73f7ea18f01e39f64c664d4e1d82ed2546efc385007fd4d5
   languageName: node
   linkType: hard
 
@@ -1430,6 +1436,15 @@ __metadata:
   dependencies:
     csstype: 3.1.1
   checksum: 1732f1d13ecdd0995f97c52b8fabd883c5ac5c814aebe423b1948d33789198642fec448a34d75732aea186e9c30c20c7f90af7174481b41d02ca91dbdb72bd83
+  languageName: node
+  linkType: hard
+
+"@clerk/types@npm:3.65.4":
+  version: 3.65.4
+  resolution: "@clerk/types@npm:3.65.4"
+  dependencies:
+    csstype: 3.1.1
+  checksum: 3699233b9992704a50ac88b2c7cfa7439ec23dcf3ffe333cd86f5c4b542989d803912f032e6131dae0439a14d81234836008eaa46354f5e783d0a9cb7b34830f
   languageName: node
   linkType: hard
 
@@ -2385,7 +2400,7 @@ __metadata:
     "@babel/core": 7.21.8
     "@babel/preset-env": 7.21.5
     "@babel/preset-typescript": 7.21.5
-    "@clerk/clerk-react": 4.15.4
+    "@clerk/clerk-react": 4.32.4
     "@clerk/types": 3.36.0
     "@redwoodjs/auth": 5.0.6
     "@testing-library/react": 14.0.0
@@ -2400,7 +2415,7 @@ __metadata:
     react-dom: 18.2.0
     typescript: 5.0.4
   peerDependencies:
-    "@clerk/clerk-react": 4.15.4
+    "@clerk/clerk-react": 4.32.4
   languageName: unknown
   linkType: soft
 
@@ -5299,6 +5314,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"glob-to-regexp@npm:0.4.1":
+  version: 0.4.1
+  resolution: "glob-to-regexp@npm:0.4.1"
+  checksum: e795f4e8f06d2a15e86f76e4d92751cf8bbfcf0157cea5c2f0f35678a8195a750b34096b1256e436f0cebc1883b5ff0888c47348443e69546a5a87f9e1eb1167
+  languageName: node
+  linkType: hard
+
 "glob@npm:^7.1.3, glob@npm:^7.1.4":
   version: 7.2.3
   resolution: "glob@npm:7.2.3"
@@ -6536,6 +6558,13 @@ __metadata:
   bin:
     jest: bin/jest.js
   checksum: a8ff2eb0f421623412236e23cbe67c638127fffde466cba9606bc0c0553b4c1e5cb116d7e0ef990b5d1712851652c8ee461373b578df50857fe635b94ff455d5
+  languageName: node
+  linkType: hard
+
+"js-cookie@npm:3.0.1":
+  version: 3.0.1
+  resolution: "js-cookie@npm:3.0.1"
+  checksum: bb48de67e2a6bd1ae3dfd6b2d5a167c33dd0c5a37e909206161eb0358c98f17cb55acd55827a58e9eea3630d89444e7479f7938ef4420dda443218b8c434a4c3
   languageName: node
   linkType: hard
 
@@ -8769,12 +8798,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"swr@npm:1.3.0":
-  version: 1.3.0
-  resolution: "swr@npm:1.3.0"
+"swr@npm:2.2.0":
+  version: 2.2.0
+  resolution: "swr@npm:2.2.0"
+  dependencies:
+    use-sync-external-store: ^1.2.0
   peerDependencies:
     react: ^16.11.0 || ^17.0.0 || ^18.0.0
-  checksum: e7a184f0d560e9c8be85c023cc8e65e56a88a6ed46f9394b301b07f838edca23d2e303685319a4fcd620b81d447a7bcb489c7fa0a752c259f91764903c690cdb
+  checksum: 1f04795ff9dff54987cbf8a544afc9e42d1350a99e899be8a7cdc4885f561e3ee464f78245ee2ebc8ced262b04023d134f731e276227319dc2d6e1843389ddd8
   languageName: node
   linkType: hard
 
@@ -9299,6 +9330,15 @@ __metadata:
   version: 8.0.2
   resolution: "urlpattern-polyfill@npm:8.0.2"
   checksum: d2cc0905a613c77e330c426e8697ee522dd9640eda79ac51160a0f6350e103f09b8c327623880989f8ba7325e8d95267b745aa280fdcc2aead80b023e16bd09d
+  languageName: node
+  linkType: hard
+
+"use-sync-external-store@npm:^1.2.0":
+  version: 1.2.2
+  resolution: "use-sync-external-store@npm:1.2.2"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: fe07c071c4da3645f112c38c0e57beb479a8838616ff4e92598256ecce527f2888c08febc7f9b2f0ce2f0e18540ba3cde41eb2035e4fafcb4f52955037098a81
   languageName: node
   linkType: hard
 
